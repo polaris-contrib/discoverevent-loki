@@ -2,6 +2,8 @@
 
 [author: alexwanglei](https://github.com/alexwanglei)
 
+[English](./README.md) | 中文
+
 插件实现将服务事件日志发送到Loki日志系统，通过Grafana对Loki中的日志进行检索和可视化展示。
 
 ## 一、准备工作
