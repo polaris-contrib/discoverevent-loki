@@ -1,5 +1,7 @@
 # 服务发现事件日志上报Loki插件
 
+[author: alexwanglei](https://github.com/alexwanglei)
+
 插件实现将服务事件日志发送到Loki日志系统，通过Grafana对Loki中的日志进行检索和可视化展示。
 
 ## 一、准备工作
@@ -38,6 +40,11 @@ $ sudo systemctl status grafana-server
 更多安装方式请参考 [Grafana官方安装文档](https://grafana.com/docs/grafana/latest/setup-grafana/installation/)
 
 ## 二、插件配置与使用
+
+### 编译插件
+
+### 在 polaris-server 启用
+
 在 polaris-server.yaml 配置文件中，插件配置部分，discoverEvent插件配置块设置如下配置：
 
 ```YAML
