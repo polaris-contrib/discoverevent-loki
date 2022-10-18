@@ -45,6 +45,19 @@ For more installation methods, please refer to [Grafana official installation do
 
 ### Compile the plugin
 
+1. Git clone https://github.com/polarismesh/polaris.git
+2. Go to the polaris directory
+3. Execute **go get github.com/polaris-contrib/polaris-server-plugin-discoverevent-loki**
+4. Execute **go mod tidy -compat=1.17**
+5. Edit polaris/plugin.go, add in the import block
+    ```go
+    import (
+         ...
+         _ "github.com/polarismesh/polaris/plugin/discoverevent/loki" # Introduce the plugin and trigger the plugin's automatic registration logic
+    )
+    ```
+6. Execute build.sh to build polaris-server
+
 ### enable in polaris-server
 
 In the polaris-server.yaml configuration file, in the plugin configuration section, the discoverEvent plugin configuration block is set as follows:

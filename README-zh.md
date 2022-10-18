@@ -45,6 +45,19 @@ $ sudo systemctl status grafana-server
 
 ### 编译插件
 
+1. git clone https://github.com/polarismesh/polaris.git
+2. 进入 polaris 目录
+3. 执行 **go get github.com/polaris-contrib/polaris-server-plugin-discoverevent-loki**
+4. 执行 **go mod tidy -compat=1.17**
+5. 编辑 polaris/plugin.go, 在 import 块中添加   
+   ```go
+   import (
+        ...
+	      _ "github.com/polarismesh/polaris/plugin/discoverevent/loki" # 引入插件，并触发插件的自动注册逻辑
+   )
+   ```
+5. 执行 build.sh 构建 polaris-server
+
 ### 在 polaris-server 启用
 
 在 polaris-server.yaml 配置文件中，插件配置部分，discoverEvent插件配置块设置如下配置：
